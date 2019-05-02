@@ -5,7 +5,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   template: 
     `<input class="todo-input" 
       #inputElementRef
-      [value]="title" 
+      placeholder="To do..." 
       (keyup.enter)="submitValue($event.target.value)">
 
     <button class="btn"
@@ -15,7 +15,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./input-button-unit.component.css']
 })
 export class InputButtonUnitComponent implements OnInit {
-  title = 'Hello World!';
+  title = 'To do...';
   @Output() submit: EventEmitter<string> = new EventEmitter();
 
 
@@ -31,4 +31,5 @@ export class InputButtonUnitComponent implements OnInit {
   submitValue(newTitle: string){
     this.submit.emit(newTitle);
   }
+
 }
